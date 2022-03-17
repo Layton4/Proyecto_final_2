@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public GameObject cabine;
 
-    private float moveForce = 700;
+    private float moveForce = 400;
     private float HorizontalInput;
     private float VerticalInput;
 
