@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public GameObject cabine;
 
-    private float moveForce = 400;
+    public float moveForce = 1000;
+    public float rotateForce = 50;
     private float HorizontalInput;
     private float VerticalInput;
 
-    private float speed = 10;
-    private float turnspeed = 2;
+    public float speed = 20;
+    private float turnspeed = 15;
     private Rigidbody playerRigidbody;
-    private Rigidbody cabineRigidbody;
 
     void Start()
     {
@@ -26,7 +25,10 @@ public class PlayerController : MonoBehaviour
         HorizontalInput = Input.GetAxis("Horizontal");
         VerticalInput = Input.GetAxis("Vertical");
 
-        playerRigidbody.AddForce(gameObject.transform.forward * VerticalInput * speed * moveForce);
-        transform.Rotate(Vector3.up * HorizontalInput * turnspeed);
+        //playerRigidbody.AddForce(Vector3.forward * speed * VerticalInput * moveForce);
+        
+        transform.Rotate(Vector3.up * HorizontalInput * turnspeed * rotateForce* Time.deltaTime);
+        //transform.Translate(Vector3.forward * VerticalInput * speed * Time.deltaTime);
+        playerRigidbody.AddForce(gameObject.transform.forward * VerticalInput * moveForce);
     }
 }
