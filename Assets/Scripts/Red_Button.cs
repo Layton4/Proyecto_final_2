@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Move_forward : MonoBehaviour
+public class Red_Button : MonoBehaviour
 {
-    private float speed = 40f;
+
+    public GameObject Dor;
     void Start()
     {
         
@@ -12,6 +13,6 @@ public class Move_forward : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);  
+        
     }
 }

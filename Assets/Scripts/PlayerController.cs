@@ -12,11 +12,13 @@ public class PlayerController : MonoBehaviour
 
     public float speed = 4;
     private float turnspeed = 50;
-    private Rigidbody playerRigidbody;
+    //private Rigidbody playerRigidbody;
+    private GameObject cabine;
 
     void Start()
     {
-        playerRigidbody = GetComponent<Rigidbody>();
+        //playerRigidbody = GetComponent<Rigidbody>();
+        cabine = GameObject.Find("cabina_superior");
     }
 
 
@@ -30,5 +32,15 @@ public class PlayerController : MonoBehaviour
         transform.Rotate(Vector3.up * HorizontalInput * turnspeed * Time.deltaTime);
         transform.Translate(Vector3.forward * VerticalInput * speed * Time.deltaTime);
         //playerRigidbody.AddForce(gameObject.transform.forward * VerticalInput * moveForce);
+
+        if(Input.GetKey(KeyCode.Q))
+        {
+            cabine.transform.Rotate(Vector3.up * -turnspeed/2 * Time.deltaTime);
+        }
+
+        if (Input.GetKey(KeyCode.E))
+        {
+            cabine.transform.Rotate(Vector3.up * turnspeed / 2 * Time.deltaTime);
+        }
     }
 }
