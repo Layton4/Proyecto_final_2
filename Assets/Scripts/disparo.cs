@@ -7,6 +7,7 @@ public class disparo : MonoBehaviour
     //bala y cadencia de disparo
     public GameObject bulletPrefab;
     private bool canShot;
+    private float cadencia = 0.6f;
 
     //posición de la bala
     private GameObject canonhole;
@@ -38,7 +39,7 @@ public class disparo : MonoBehaviour
 
     public IEnumerator ShotCooldown() //corrutina que nos hará esperar 1 segundo antes de que la variable canShot valga true y podamos disparar
     {
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(cadencia);
         canShot = true;
     }
 }

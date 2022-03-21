@@ -5,25 +5,16 @@ using UnityEngine;
 public class Automatic_Dors : MonoBehaviour
 {
 
-    public Animator doorAnimator;
+    public Animator doorAnimator; //el animator de la puerta que queremos abrir
 
-    void Start()
+ 
+    private void OnTriggerStay(Collider other) //al entrar al trigger que hay situado en la entrada de la puerta
     {
-        
+        doorAnimator.SetBool("openDor", true); //activamos la animación de abrir la puerta
     }
 
-    void Update()
+    private void OnTriggerExit(Collider other) //si salimos del trigger
     {
-        
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        doorAnimator.SetBool("openDor", true);
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        doorAnimator.SetBool("openDor", false);
+        doorAnimator.SetBool("openDor", false); //la puerta se cerrará automáticamente
     }
 }

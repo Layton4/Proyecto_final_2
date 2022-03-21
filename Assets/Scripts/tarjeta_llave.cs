@@ -14,19 +14,17 @@ public class tarjeta_llave : MonoBehaviour
    
     void Update()
     {
-        transform.Rotate(Vector3.up * turnspeed * Time.deltaTime);
+        transform.Rotate(Vector3.up * turnspeed * Time.deltaTime); //la llave estará constantemente girando sobre su eje Y
     }
 
-    public void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other) //si nos acercamos a la llave
     {
-        if(other.gameObject.CompareTag("Player"))
+        if(other.gameObject.CompareTag("Player")) //el Player podrá coger la llave
         {
-            if(gameObject.CompareTag("tarjeta1"))
-            {
-                puertaLlaveScript.hasKey = true;
-                Destroy(gameObject);
-            }
 
+        puertaLlaveScript.hasKey = true;
+        Destroy(gameObject);
+   
         }
 
         

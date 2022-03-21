@@ -18,9 +18,11 @@ public class PlayerController : MonoBehaviour
     private GameObject cabine;
     private GameObject canon;
 
+    private Win winscript;
+
     void Start()
     {
-        //playerRigidbody = GetComponent<Rigidbody>();
+        winscript = GameObject.Find("Bandera_Victoria").GetComponent<Win>();
         cabine = GameObject.Find("cabina_superior");
         canon = GameObject.Find("canon");
     }
@@ -28,38 +30,35 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        HorizontalInput = Input.GetAxis("Horizontal");
-        VerticalInput = Input.GetAxis("Vertical");
-
-        //playerRigidbody.AddForce(Vector3.forward * speed * VerticalInput * moveForce);
+        if(!winscript.youWin)
+        { 
+            HorizontalInput = Input.GetAxis("Horizontal");
+            VerticalInput = Input.GetAxis("Vertical");
         
-        transform.Rotate(Vector3.up * HorizontalInput * turnspeed * 2 * Time.deltaTime);
-        transform.Translate(Vector3.forward * VerticalInput * speed * Time.deltaTime);
-        //playerRigidbody.AddForce(gameObject.transform.forward * VerticalInput * moveForce);
+            transform.Rotate(Vector3.up * HorizontalInput * turnspeed * 2 * Time.deltaTime);
+            transform.Translate(Vector3.forward * VerticalInput * speed * Time.deltaTime);
+       
 
-        if(Input.GetKey(KeyCode.Q))
-        {
-            cabine.transform.Rotate(Vector3.up * -turnspeed * Time.deltaTime);
+            if(Input.GetKey(KeyCode.Q)) //mientras pulses la Q la cabina rotará a la izquierda
+            {
+                cabine.transform.Rotate(Vector3.up * -turnspeed * Time.deltaTime);
+            }
+
+            if (Input.GetKey(KeyCode.E)) //mientras pulses la tecla E la cabina rotará a la derecha
+            {
+                cabine.transform.Rotate(Vector3.up * turnspeed * Time.deltaTime);
+            }
+
+            if(Input.GetKey(KeyCode.R))//mientras pulses la tecla R el canon apuntará más arriba, rotará en x hacia arriba
+            {
+                canon.transform.Rotate(Vector3.left * turnspeed * Time.deltaTime);
+            }
+            if (Input.GetKey(KeyCode.F))//mientras pulses la tecla F el canon apuntará más abajo, rotará en x hacia abajo
+            {
+                canon.transform.Rotate(Vector3.right * turnspeed * Time.deltaTime);
+            }
         }
 
-        if (Input.GetKey(KeyCode.E))
-        {
-            cabine.transform.Rotate(Vector3.up * turnspeed * Time.deltaTime);
-        }
-
-        if(Input.GetKey(KeyCode.R))
-        {
-            canon.transform.Rotate(Vector3.left * turnspeed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.F))
-        {
-            canon.transform.Rotate(Vector3.right * turnspeed * Time.deltaTime);
-        }
-        /*float MouseY = Input.GetAxis("Mouse Y") * mouseSentivility * Time.deltaTime;
-        xRotation = -MouseY;
-        xRotation = Mathf.Clamp(xRotation, -19f, 20f);
-
-        canon.transform.Rotate(Vector3.right * xRotation);*/
 
     }
 }

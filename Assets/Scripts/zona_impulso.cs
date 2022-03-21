@@ -10,17 +10,10 @@ public class zona_impulso : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerRigidbody = GameObject.Find("player_v5").GetComponent<Rigidbody>();
+        playerRigidbody = GameObject.Find("player_v5").GetComponent<Rigidbody>(); //accedemos al rigidbody del player
     }
-
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerStay(Collider other) //si nos situamos dentro de la zona del trigger
     {
-        
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        playerRigidbody.AddForce(Vector3.up * impulseForce, ForceMode.Impulse);
+        playerRigidbody.AddForce(Vector3.up * impulseForce, ForceMode.Impulse); //una fuerza nos elevará arriba para poder mantenernos en el aire mientras estemos en contacto con el trigger
     }
 }

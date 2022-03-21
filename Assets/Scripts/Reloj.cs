@@ -18,8 +18,8 @@ public class Reloj : MonoBehaviour
     void Start()
     {
         initialTimeScale = timeScale; //paso normal del tiempo;
-        myText = GetComponent<Text>(); //accedemos a la compenente text
-        timeToShow = initialTime;
+        myText = GetComponent<Text>(); //accedemos a la compenente text del texto
+        timeToShow = initialTime; //el tiempo en el que empezaremos a contar, en este caso al ser un cronometro será 0
 
         ActualizarReloj(initialTime);
     }
@@ -29,7 +29,7 @@ public class Reloj : MonoBehaviour
     {
         frameTimeScale = Time.deltaTime * timeScale;
         timeToShow += frameTimeScale;
-        ActualizarReloj(timeToShow);
+        ActualizarReloj(timeToShow); //llamaremos a la función en update para que lo compruebe siempre y le indicamos en que tiempo empezamos con timeToShow
     }
 
     public void ActualizarReloj(float timeInSeconds)
@@ -39,11 +39,11 @@ public class Reloj : MonoBehaviour
         string textoDelReloj;
 
         if (timeInSeconds < 0) timeInSeconds = 0;
-        minuts = (int)timeInSeconds / 60;
-        seconds = (int)timeInSeconds % 60;
+        minuts = (int)timeInSeconds / 60; //así calcularemos cuantos minutos son los segundos que llevamos
+        seconds = (int)timeInSeconds % 60; //el resto serán segundos
 
-        textoDelReloj = minuts.ToString("00") + ":" + seconds.ToString("00");
-        myText.text = textoDelReloj;
+        textoDelReloj = minuts.ToString("00") + ":" + seconds.ToString("00"); //convertimos en string los minutos y segundos para mostrarlos por pantalla
+        myText.text = textoDelReloj; //y lo metemos en la variable para que podamos verlo en el juego
     }
     
 }

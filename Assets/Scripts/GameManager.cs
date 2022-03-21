@@ -6,14 +6,10 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public TextMeshProUGUI HowPlayPanel;
+    public GameObject HowPlayPanel;
     void Start()
     {
-        
-    }
-    void Update()
-    {
-        
+
     }
 
     public void StartGame()
@@ -23,12 +19,17 @@ public class GameManager : MonoBehaviour
 
     public void Instructions()
     {
-
+        HowPlayPanel.SetActive(true);
     }
     public void exit()
     {
         Debug.Log("Saliendo del juego...");
         Application.Quit();
+    }
+
+    public void returnMenu()
+    {
+        HowPlayPanel.SetActive(false);
     }
 
 }

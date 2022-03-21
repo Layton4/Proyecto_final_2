@@ -10,38 +10,32 @@ public class puertaLlave : MonoBehaviour
     public GameObject advertencia;
     void Start()
     {
-        hasKey = false;
-        keyDor = GameObject.Find("puerta1").GetComponent<Animator>();
+        hasKey = false; //bolean que comprueba si has cogido la llave para abrir la puerta
+        keyDor = GameObject.Find("puerta1").GetComponent<Animator>(); //animator de la puerta que queremos abrir
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnTriggerEnter(Collider other) //al entrar al trigger que hemos situado en el suelo cerca de la puerta
     {
-        
-    }
-
-    public void OnTriggerEnter(Collider other)
-    {
-        if(hasKey)
+        if(hasKey) //si tiene la llave
         {
-            keyDor.SetBool("openDor", true);
+            keyDor.SetBool("openDor", true); //abrirá la puerta
         }
 
     }
 
-    public void OnTriggerStay(Collider other)
+    public void OnTriggerStay(Collider other) //si no hemos cogido la llave y queremos ir por esa puerta saltará un mensaje que nos dirá que vayamos a buscar la llave
     {
         if(!hasKey)
         {
             advertencia.SetActive(true);
         }
-        else
+        else //en caso de tener la llave el mensaje se desactiva
         {
             advertencia.SetActive(false);
         }
     }
 
-    public void OnTriggerExit(Collider other)
+    public void OnTriggerExit(Collider other) //si nos alejamos del trigger el mensaje no aparecerá
     {
         advertencia.SetActive(false);
     }

@@ -6,7 +6,7 @@ using TMPro;
 
 public class Win : MonoBehaviour
 {
-    private bool youWin;
+    public bool youWin;
     public GameObject WinScrean;
     private SpawnManager SpawnManagerScript;
 
@@ -23,7 +23,7 @@ public class Win : MonoBehaviour
         WinScrean.SetActive(false);
     }
 
-    void Update()
+    void Update() //si la variable YouWin es true activaremos la pantalla de victoria
     {
         if (youWin)
         {
@@ -31,9 +31,9 @@ public class Win : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other) //al tocar el trigger de la bandera de victoria
     {
-         youWin = true;
-         RelojScript.timeScale = 0;
+         youWin = true; //la variable YouWin será True
+         RelojScript.timeScale = 0; //y el cronometro parará
     }
 }

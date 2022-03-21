@@ -97,8 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: ff29274dcae763b4ba4c977800f7b9d2, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: dd015bcccade97645a71e0ab89c4bb29, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -556,12 +556,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 205851180}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 15.9453335, y: 106.3727, z: 33.54655}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: -20.049654, y: -9.306328, z: -7.288311}
   m_LocalScale: {x: 0.49847797, y: 3.085922, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_Father: {fileID: 1450300217}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &264058564
 GameObject:
@@ -833,7 +833,7 @@ GameObject:
   - component: {fileID: 467998701}
   - component: {fileID: 467998705}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Bandera_Victoria
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -914,7 +914,7 @@ Transform:
   m_Children:
   - {fileID: 924574158}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &467998705
 MonoBehaviour:
@@ -928,6 +928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db324e3a06d29714a9627a2c798e8811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  youWin: 0
   WinScrean: {fileID: 767064956}
   TimePanel: {fileID: 2103139520}
   RelojScript: {fileID: 264058566}
@@ -1338,11 +1339,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 751925826}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 58.830414, y: 106.60371, z: 60.56794}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 22.835426, y: -9.075325, z: 19.733078}
   m_LocalScale: {x: 0.5913872, y: 0.49135336, z: 0.5030335}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1450300217}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &767064956
@@ -1362,7 +1363,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &767064957
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1632,7 +1633,7 @@ GameObject:
   - component: {fileID: 940527291}
   - component: {fileID: 940527290}
   m_Layer: 5
-  m_Name: Retry_button
+  m_Name: PlayAgainButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1701,7 +1702,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 940527291}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &940527291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2071,7 +2084,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1307121905
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2447,8 +2460,11 @@ Transform:
   - {fileID: 95262772}
   - {fileID: 1649000479}
   - {fileID: 156876185}
+  - {fileID: 751925830}
+  - {fileID: 1994333988}
+  - {fileID: 205851184}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1468708470 stripped
 Transform:
@@ -2617,7 +2633,7 @@ RectTransform:
   - {fileID: 767064957}
   - {fileID: 441772688}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2633,6 +2649,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1598173574}
+  - component: {fileID: 1598173573}
   m_Layer: 0
   m_Name: gameManager
   m_TagString: Untagged
@@ -2640,6 +2657,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1598173573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598173572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11a78534adbb2ce47a70d9af8d768d59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PanelWin: {fileID: 0}
 --- !u!4 &1598173574
 Transform:
   m_ObjectHideFlags: 0
@@ -3822,12 +3852,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1994333984}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 16.46644, y: 106.0933, z: 33.243988}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -19.528547, y: -9.5857315, z: -7.5908737}
   m_LocalScale: {x: 1.0310422, y: 3.085922, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_Father: {fileID: 1450300217}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &2070129469
 GameObject:

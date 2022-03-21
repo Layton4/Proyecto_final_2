@@ -5,19 +5,10 @@ using UnityEngine;
 public class Red_Button : MonoBehaviour
 {
 
-    public Animator puerta_cerrada;
-    void Start()
-    {
-        
-    }
+    public Animator puerta_cerrada; //animator de la puerta que queremos abrir
 
-    void Update()
+    public void OnTriggerEnter(Collider other) //al ponernos sobre el boton
     {
-        
-    }
-
-    public void OnTriggerEnter(Collider other)
-    {
-        puerta_cerrada.SetBool("openDor", true);
+        puerta_cerrada.SetBool("openDor", true); //abriremos la puerta
     }
 }
