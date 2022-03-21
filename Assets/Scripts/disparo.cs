@@ -38,7 +38,7 @@ public class disparo : MonoBehaviour
 
     public IEnumerator ShotCooldown() //corrutina que nos hará esperar 1 segundo antes de que la variable canShot valga true y podamos disparar
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.8f);
         canShot = true;
     }
 }
