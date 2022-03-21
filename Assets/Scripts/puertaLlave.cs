@@ -6,7 +6,8 @@ public class puertaLlave : MonoBehaviour
 {
     private Animator keyDor;
     public bool hasKey;
-    public bool haskey2;
+    public bool hasKey2;
+    public GameObject advertencia;
     void Start()
     {
         hasKey = false;
@@ -25,8 +26,26 @@ public class puertaLlave : MonoBehaviour
         {
             keyDor.SetBool("openDor", true);
         }
+
     }
 
- 
+    public void OnTriggerStay(Collider other)
+    {
+        if(!hasKey)
+        {
+            advertencia.SetActive(true);
+        }
+        else
+        {
+            advertencia.SetActive(false);
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        advertencia.SetActive(false);
+    }
+
+
 
 }

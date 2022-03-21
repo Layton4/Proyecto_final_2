@@ -27,11 +27,6 @@ public class tarjeta_llave : MonoBehaviour
                 Destroy(gameObject);
             }
 
-            else
-            {
-                puertaLlaveScript.haskey2 = true;
-                Destroy(gameObject);
-            }
         }
 
         
