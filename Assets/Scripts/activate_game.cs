@@ -11,6 +11,8 @@ public class activate_game : MonoBehaviour
     private Reloj RelojScript;
     public bool gameOn;
     private SpawnManager spawnManagerScript;
+
+    private int playtime = 40;
     void Start()
     {
         GamePanel.SetActive(false);
@@ -41,7 +43,7 @@ public class activate_game : MonoBehaviour
     private IEnumerator Playtime()
     {
         StartCoroutine(spawnManagerScript.spawnObjective());
-        yield return new WaitForSeconds(30);
+        yield return new WaitForSeconds(playtime);
         gameOn = false;
         Debug.Log("Se acabó");
         StopCoroutine(spawnManagerScript.spawnObjective());

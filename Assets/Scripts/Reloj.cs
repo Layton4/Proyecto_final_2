@@ -7,7 +7,7 @@ using TMPro;
 public class Reloj : MonoBehaviour
 {
     public int initialTime; //tiempo inicial en segundos
-    [Range(-30.0f,30f)]
+    [Range(-40.0f,40f)]
     public float timeScale = 1; //como de rápido irá el reloj y si irá para alante o atrás el tiempo;
 
 

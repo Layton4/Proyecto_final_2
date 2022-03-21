@@ -52,6 +52,10 @@ public class SpawnManager : MonoBehaviour
             yield return new WaitForSeconds(spawnRate);
             
             spawnPos = RandomPosition();
+            while (targetPositions.Contains(spawnPos))
+            {
+                spawnPos = RandomPosition();
+            }
             Instantiate(objectiveprefab, spawnPos, objectiveprefab.transform.rotation);
             targetPositions.Add(spawnPos);
         }
