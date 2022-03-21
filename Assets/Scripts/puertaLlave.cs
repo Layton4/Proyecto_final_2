@@ -6,9 +6,10 @@ public class puertaLlave : MonoBehaviour
 {
     private Animator keyDor;
     public bool hasKey;
+    public bool haskey2;
     void Start()
     {
-        //hasKey = false;
+        hasKey = false;
         keyDor = GameObject.Find("puerta1").GetComponent<Animator>();
     }
 

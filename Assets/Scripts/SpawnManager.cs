@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class SpawnManager : MonoBehaviour
     public List<Vector3> targetPositions;
 
     private activate_game activate_gameScript;
+    public TextMeshProUGUI pointstext;
 
     private Vector3 spawnPos;
     public int score;
@@ -28,6 +30,7 @@ public class SpawnManager : MonoBehaviour
     void Update()
     {
         currentScore = score;
+        pointstext.text = $"Score: {currentScore}";
     }
 
     public Vector3 RandomPosition()

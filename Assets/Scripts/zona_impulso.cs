@@ -5,7 +5,7 @@ using UnityEngine;
 public class zona_impulso : MonoBehaviour
 {
 
-    private float impulseForce = 6f;
+    private float impulseForce = 4f;
     private Rigidbody playerRigidbody;
     // Start is called before the first frame update
     void Start()

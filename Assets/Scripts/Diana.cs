@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class Diana : MonoBehaviour
 {
     public ParticleSystem DestroyParticleSystem;
     private float lifetime = 7f;
     private SpawnManager spawnManagerScript;
+
     void Start()
     {
         spawnManagerScript = FindObjectOfType<SpawnManager>();

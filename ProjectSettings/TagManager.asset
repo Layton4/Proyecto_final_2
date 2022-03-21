@@ -7,6 +7,10 @@ TagManager:
   - misil
   - palanca
   - ascensor
+  - tarjeta2
+  - sensor4
+  - sensor2
+  - tarjeta1
   layers:
   - Default
   - TransparentFX

@@ -21,10 +21,21 @@ public class tarjeta_llave : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            puertaLlaveScript.hasKey = true;
-            Destroy(gameObject);
-            
+            if(gameObject.CompareTag("tarjeta1"))
+            {
+                puertaLlaveScript.hasKey = true;
+                Destroy(gameObject);
+            }
+
+            else
+            {
+                puertaLlaveScript.haskey2 = true;
+                Destroy(gameObject);
+            }
         }
+
+        
+
     }
 
 }

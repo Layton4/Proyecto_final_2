@@ -6,6 +6,7 @@ public class Automatic_Dors : MonoBehaviour
 {
 
     public Animator doorAnimator;
+
     void Start()
     {
         

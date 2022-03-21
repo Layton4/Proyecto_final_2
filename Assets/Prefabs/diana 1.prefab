@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9065181676703994822}
   - component: {fileID: -7218380880106496223}
   m_Layer: 0
-  m_Name: diana
+  m_Name: diana 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,3 +110,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DestroyParticleSystem: {fileID: 9124090446403940760, guid: ec46d80c9a12c174f87b717461edfd2f, type: 3}
+  scoreText: {fileID: 0}
